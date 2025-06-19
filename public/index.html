@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICT Bootcamp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ICT Bootcamp Student Projects</h1>
+    </header>
+
+    <div class="container">
+      <!-- Student link cards (you can dynamically populate these) -->
+      <a href="signup.html" class="link-card" alt_name="Sign Up">
+        <h3>Sign Up</h3>
+      </a>
+      <a href="login.html" class="link-card" alt_name="Log In">
+        <h3>Log In</h3>
+      </a>
+      <a href="contact.html" class="link-card" alt_name="Contact Us">
+        <h3>Contact Us</h3>
+      </a>
+      <!-- Add more project links as necessary -->
+    </div>
+
+    <footer>
+      <p>&copy; 2025 ICT Bootcamp</p>
+    </footer>
+
+    <!-- Popup Modal -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h2>Welcome to ICT Bootcamp!</h2>
+        <p>Click on any card to visit the project.</p>
+        <button id="close-popup">Close</button>
+      </div>
+    </div>
+
+    <script>
+      // Show popup on load
+      window.onload = () => {
+        const popup = document.getElementById("popup");
+        const closePopup = document.getElementById("close-popup");
+
+        setTimeout(() => {
+          popup.style.display = "flex";
+        }, 1000);
+
+        closePopup.addEventListener("click", () => {
+          popup.style.display = "none";
+        });
+      };
+
+      // Example of using JS for interactivity
+      const cards = document.querySelectorAll(".link-card");
+      cards.forEach((card) => {
+        card.addEventListener("click", (event) => {
+          const name = card.getAttribute("alt_name"); // Fetch the alt_name attribute
+          alert(`You're visiting project ${name}!`);
+        });
+      });
+    </script>
+  </body>
+</html>
