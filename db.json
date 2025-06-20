@@ -1,31 +1,4 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "email": "wovol25700@kinsef.com",
-      "password": "P@$$W0Rd",
-      "name": "wwerwer sg wwerwer",
-      "phone": "9840043605"
-    }
-  ],
-  "contacts": [
-    {
-      "id": 1,
-      "name": "Rohan Rajfgggggg",
-      "email": "poudelrohan58@gmail.com",
-      "message": "rfyyyyyyyyyygt"
-    },
-    {
-      "id": 2,
-      "name": "Rohan Rajfgggggg",
-      "email": "poudelrohan58@gmail.com",
-      "message": "rfyyyyyyyyyygt"
-    },
-    {
-      "id": 3,
-      "name": "Rohan Rajfggggggtrr",
-      "email": "poudelrohan58@g.vc",
-      "message": "xcvxcvxcv"
-    }
-  ]
+  "users": [],
+  "contacts": []
 }
