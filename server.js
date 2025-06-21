@@ -37,57 +37,7 @@ function writeDB(data) {
   }
 }
 
-// Signup Route
-app.post("/signup", (req, res) => {
-  const { email, password, name, phone } = req.body;
 
-  // Read existing users from DB
-  const data = readDB(); // This returns both users and contacts
-
-  // Check if the user already exists
-  if (data.users.find((u) => u.email === email)) {
-    return res.status(400).json({ error: "Email already exists" });
-  }
-
-  // Create a new user object
-  const newUser = {
-    id: data.users.length + 1, // Ensure unique ID for the new user
-    email,
-    password,
-    name,
-    phone,
-  };
-
-  // Add new user to users array
-  data.users.push(newUser);
-
-  // Write the updated data (both users and contacts) back to the database
-  writeDB(data);
-
-  // Return success response with the new user details
-  res.json({ message: "Signup successful", user: newUser });
-});
-
-// Login Route
-app.post("/login", (req, res) => {
-  const { email, password } = req.body;
-
-  // Read users from DB
-  const data = readDB(); // This returns both users and contacts
-
-  // Find the user with the matching email and password
-  const user = data.users.find(
-    (u) => u.email === email && u.password === password
-  );
-
-  // If user is not found, return error
-  if (!user) {
-    return res.status(401).json({ error: "Invalid email or password" });
-  }
-
-  // Return success response with the user details
-  res.json({ message: "Login successful", user });
-});
 
 // Contact form route
 app.post("/contact", (req, res) => {
